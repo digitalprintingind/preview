@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Mode</title>
+    <style>
+        /* Fullscreen styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f9;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .maintenance-container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gear container styling */
+        .gear-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .gear {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #6c63ff, #3f3d56);
+            border-radius: 50%;
+            position: relative;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        .gear:before, .gear:after {
+            content: '';
+            position: absolute;
+            background: #ffffff;
+            width: 8px;
+            height: 16px;
+            border-radius: 2px;
+        }
+
+        .gear:before {
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .gear:after {
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Individual gear animations */
+        .gear.one {
+            animation-delay: 0s;
+        }
+
+        .gear.two {
+            animation-delay: 0.5s;
+        }
+
+        .gear.three {
+            animation-delay: 1s;
+        }
+
+        /* Pulse animation */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Text animations */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            animation: fadeIn 2s ease-in-out 1s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="maintenance-container">
+        <div class="gear-container">
+            <div class="gear one"></div>
+            <div class="gear two"></div>
+            <div class="gear three"></div>
+        </div>
+        <h1>We'll be back soon!</h1>
+        <p>Our website is currently undergoing scheduled maintenance.</p>
+    </div>
+</body>
+</html>
